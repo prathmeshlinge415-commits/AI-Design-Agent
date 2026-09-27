@@ -1,0 +1,19 @@
+# Java compiled files
+*.class
+
+# Environment / secrets
+.env
+
+# Generated AI images
+generated-images/
+
+# MySQL connector
+lib/*.jar
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
