@@ -9,7 +9,8 @@ const resultBox = document.getElementById("resultBox");
 const resultImage = document.getElementById("resultImage");
 const promptText = document.getElementById("promptText");
 
-const BACKEND_URL = "http://localhost:8080/generate-design";
+const BACKEND_URL = "https://ai-design-agent.onrender.com/generate-design";
+// const BACKEND_URL = "http://localhost:8080/generate-design";
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -36,7 +37,8 @@ form.addEventListener("submit", async (event) => {
 
     if (data.status === "success") {
       statusEl.textContent = "✅ Design generated successfully!";
-      resultImage.src = "http://localhost:8080" + data.imageUrl;
+      resultImage.src = "https://ai-design-agent.onrender.com" + data.imageUrl;
+      // resultImage.src = "http://localhost:8080" + data.imageUrl;
       promptText.textContent = "AI Prompt used: " + data.prompt;
       resultBox.classList.remove("hidden");
     } else {
