@@ -3,7 +3,6 @@ package backend;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -31,7 +30,8 @@ public class Main {
         // even on machines with no display/monitor attached (e.g. servers).
         System.setProperty("java.awt.headless", "true");
 
-        int port = 8080;
+       int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
+        // int port = 8080;
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
 
         // Route 1: Handles the main "generate design" request from frontend
